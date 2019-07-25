@@ -1,8 +1,4 @@
-/**
- * Airbnb Clone App
- * @author: Andy
- * @Url: https://www.cubui.com
- */
+
 
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -10,7 +6,7 @@ import {
   createBottomTabNavigator,
   createStackNavigator,
 } from 'react-navigation';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {Ionicons} from '@expo/vector-icons';
 import ExploreContainer from '../containers/ExploreContainer';
 import InboxContainer from '../containers/InboxContainer';
 import ProfileContainer from '../containers/ProfileContainer';
@@ -46,7 +42,7 @@ ExploreTab.navigationOptions = ({ navigation }) => {
 
 const CustomTabBarIcon = (name, size) => {
   const icon = ({ tintColor }) => (
-    <Icon
+    <Ionicons
       name={name}
       size={size}
       color={tintColor}
@@ -72,28 +68,28 @@ const LoggedInTabNavigator = createBottomTabNavigator({
     screen: SavedContainer,
     navigationOptions: {
       tabBarLabel: 'SAVED',
-      tabBarIcon: CustomTabBarIcon('ios-heart-outline', 22),
+      tabBarIcon: CustomTabBarIcon('ios-heart-empty', 22),
     },
   },
   Trips: {
     screen: TripsContainer,
     navigationOptions: {
       tabBarLabel: 'TRIPS',
-      tabBarIcon: CustomTabBarIcon('ios-ionic', 21),
+      tabBarIcon: CustomTabBarIcon('ios-globe', 21),
     },
   },
   Inbox: {
     screen: InboxContainer,
     navigationOptions: {
       tabBarLabel: 'INBOX',
-      tabBarIcon: CustomTabBarIcon('ios-archive-outline', 25),
+      tabBarIcon: CustomTabBarIcon('ios-filing', 22),
     },
   },
   Profile: {
     screen: ProfileContainer,
     navigationOptions: {
       tabBarLabel: 'PROFILE',
-      tabBarIcon: CustomTabBarIcon('ios-contact-outline', 22),
+      tabBarIcon: CustomTabBarIcon('ios-contact', 22),
     },
   },
 }, {

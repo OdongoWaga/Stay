@@ -1,8 +1,4 @@
-/**
- * Airbnb Clone App
- * @author: Andy
- * @Url: https://www.cubui.com
- */
+
 
 const createReducer = (initialState, handlers) => {
   const reducer = (state = initialState, action) => {

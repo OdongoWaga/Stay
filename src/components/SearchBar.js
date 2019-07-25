@@ -1,11 +1,7 @@
-/**
- * Airbnb Clone App
- * @author: Andy
- * @Url: https://www.cubui.com
- */
+
 
 import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
+import {Ionicons} from '@expo/vector-icons';
 import {
   View,
   Text,
@@ -18,14 +14,14 @@ export default class SearchBar extends Component {
   	return (
     <View style={styles.wrapper}>
       <View style={styles.searchContainer}>
-        <Icon
+        <Ionicons
           name="ios-search"
           size={20}
           color={colors.gray02}
           style={styles.searchIcon}
         />
         <Text style={styles.textInput}>
-Try "Cape Town"
+Try "Nairobi"
         </Text>
       </View>
     </View>

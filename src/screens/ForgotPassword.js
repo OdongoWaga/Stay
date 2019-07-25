@@ -1,8 +1,4 @@
-/**
- * Airbnb Clone App
- * @author: Andy
- * @Url: https://www.cubui.com
- */
+
 
 import React, { Component } from 'react';
 import {
@@ -11,7 +7,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {FontAwesome} from '@expo/vector-icons';
 import colors from '../styles/colors';
 import transparentHeaderStyle from '../styles/navigation';
 import InputField from '../components/form/InputField';
@@ -26,7 +22,7 @@ export default class ForgotPassword extends Component {
     headerLeft: <NavBarButton
       handleButtonPress={() => navigation.goBack()}
       location="left"
-      icon={<Icon name="angle-left" color={colors.white} size={30} />}
+      icon={<FontAwesome name="angle-left" color={colors.white} size={30} />}
     />,
     headerStyle: transparentHeaderStyle,
     headerTransparent: true,

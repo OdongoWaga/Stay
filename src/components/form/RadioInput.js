@@ -1,8 +1,4 @@
-/**
- * Airbnb Clone App
- * @author: Andy
- * @Url: https://www.cubui.com
- */
+
 
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
@@ -13,8 +9,8 @@ import {
   Animated,
   StyleSheet,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
-import colors from '../../styles/colors';
+import {Ionicons} from '@expo/vector-icons';
+
 
 export default class RadioInput extends Component {
   constructor(props) {
@@ -56,7 +52,7 @@ export default class RadioInput extends Component {
     return (
       <View style={[{ backgroundColor: background, borderColor: border }, styles.wrapper]}>
         <Animated.View style={[{ transform: [{ scale: iconScale }] }, styles.iconWrapper]}>
-          <Icon
+          <Ionicons
             name="md-checkmark"
             color={iconColor}
             size={20}

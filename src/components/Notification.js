@@ -1,12 +1,8 @@
-/**
- * Airbnb Clone App
- * @author: Andy
- * @Url: https://www.cubui.com
- */
+
 
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {FontAwesome} from '@expo/vector-icons';
 import {
   View,
   Text,
@@ -71,7 +67,7 @@ export default class Notification extends Component {
         style={styles.closeButton}
         onPress={this.closeNotification}
       >
-        <Icon
+        <FontAwesome
           name="times"
           size={20}
           color={colors.lightGray}

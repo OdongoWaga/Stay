@@ -1,49 +1,28 @@
-/**
- * Airbnb Clone App
- * @author: Andy
- * @Url: https://www.cubui.com
- */
+import { reactStackNavigator, createAppContainer, createBottomTabNavigator, createStackNavigator, createSwitchNavigator} from 'react-navigation';
+import LoggedOut from '../screens/LoggedOut'
+import LogIn from '../screens/LogIn'
+import ForgotPassword from '../screens/ForgotPassword'
+import TurnOnNotifications from '../screens/TurnOnNotifications'
+import LoggedInTabNavigator from './LoggedInTabNavigator'
 
-import React from 'react';
-import { compose, createStore, applyMiddleware } from 'redux';
-import {
-  reduxifyNavigator,
-  createReactNavigationReduxMiddleware,
-} from 'react-navigation-redux-helpers';
-import { createLogger } from 'redux-logger';
-import thunkMiddleware from 'redux-thunk';
-import { connect } from 'react-redux';
-import AppRouteConfigs from './AppRouteConfigs';
-import reducer from '../redux/reducers';
-
-const middleware = createReactNavigationReduxMiddleware(
-  'root',
-  state => state.nav,
-);
-
-const App = reduxifyNavigator(AppRouteConfigs, 'root');
-const mapStateToProps = state => ({
-  state: state.nav,
+const LoggedOutStack = createStackNavigator({
+    LoggedOut:{screen: LoggedOut},
+    LogIn:{screen: LogIn},
+    ForgotPassword:{screen: ForgotPassword}
 });
 
-const AppWithNavigationState = connect(mapStateToProps)(App);
-
-const loggerMiddleware = createLogger({ predicate: () => __DEV__ });
-
-const configureStore = (initialState) => {
-  const enhancer = compose(
-    applyMiddleware(
-      middleware,
-      thunkMiddleware,
-      loggerMiddleware,
-    ),
-  );
-  return createStore(reducer, initialState, enhancer);
-};
-
-const Root = () => <AppWithNavigationState />;
-
-export {
-  configureStore,
-  Root,
-};
+export default createAppContainer(
+    createSwitchNavigator({
+        LoggedOut: LoggedOutStack,
+        LoggedIn: {
+            screen: LoggedInTabNavigator,
+            navigatorOptions: {
+                header: null, 
+                gesturesEnabled: false
+            }
+        },
+        TurnOnNotifications: {screen: TurnOnNotifications}
+    }, {
+        initialRouteName: 'LoggedOut'
+    })
+)
