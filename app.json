@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Airbnb",
-    "slug": "Airbnb",
+    "name": "Stay",
+    "slug": "Stay",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": [

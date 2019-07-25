@@ -120,7 +120,7 @@ class CreateList extends Component {
                     Public
                   </Text>
                   <Text style={styles.privacyOptionDescription}>
-                    Visible to everyone and included on your public Airbnb profile.
+                    Visible to everyone and included on your public Stay profile.
                   </Text>
                   <View style={styles.privacyRadioInput}>
                     <RadioInput

@@ -77,7 +77,7 @@ Welcome to Stay.
               {' options,'}
             </Text>
             <Text style={styles.termsText}>
-              {"I agree to Airbnb's "}
+              {"I agree to Stay's "}
             </Text>
             <TouchableHighlight style={styles.linkButton}>
               <Text style={styles.termsText}>

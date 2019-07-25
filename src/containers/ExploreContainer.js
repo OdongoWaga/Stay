@@ -85,7 +85,7 @@ class ExploreContainer extends Component {
           contentContainerStyle={styles.scrollViewContent}
         >
           <Text style={styles.heading}>
-Explore Airbnb
+Explore Stay
           </Text>
           <View style={styles.categories}>
             <Categories categories={categoriesList} />
