@@ -8,6 +8,7 @@ import {
   Text,
   ScrollView,
   KeyboardAvoidingView,
+  AsyncStorage
 } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -110,6 +111,7 @@ class LogIn extends Component {
   toggleNextButtonState() {
     const { validEmail, validPassword } = this.state;
     if (validEmail && validPassword) {
+      AsyncStorage.setItem('userToken', 'loggedIn')
       return false;
     }
     return true;

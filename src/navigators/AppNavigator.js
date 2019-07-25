@@ -3,7 +3,10 @@ import LoggedOut from '../screens/LoggedOut'
 import LogIn from '../screens/LogIn'
 import ForgotPassword from '../screens/ForgotPassword'
 import TurnOnNotifications from '../screens/TurnOnNotifications'
+import AuthLoadingScreen from '../screens/AuthLoadingScreen'
 import LoggedInTabNavigator from './LoggedInTabNavigator'
+
+
 
 const LoggedOutStack = createStackNavigator({
     LoggedOut:{screen: LoggedOut},
@@ -21,8 +24,9 @@ export default createAppContainer(
                 gesturesEnabled: false
             }
         },
-        TurnOnNotifications: {screen: TurnOnNotifications}
+        TurnOnNotifications: {screen: TurnOnNotifications},
+        AuthLoadingScreen:{screen: AuthLoadingScreen}
     }, {
-        initialRouteName: 'LoggedOut'
+        initialRouteName: 'AuthLoadingScreen'
     })
 )
